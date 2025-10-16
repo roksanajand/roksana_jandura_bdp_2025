@@ -1,64 +1,63 @@
-INSERT INTO ksiegowosc.pracownicy (imie, nazwisko, adres, telefon)
+INSERT INTO ksiegowosc.pracownicy (id_pracownika, imie, nazwisko, adres, telefon) 
 VALUES
-('Jan', 'Nowak', 'Kwiatowa 5', '111111111'),
-('Julia', 'Kowalska', 'Lipowa 7', '111222333'),
-('Jakub', 'Wiśniewski', 'Słoneczna 10', '222333444'),
-('Anna', 'Nowicka', 'Jesienna 12', '333444555'),
-('Joanna', 'Wójcik', 'Topolowa 3', '444555666'),
-('Piotr', 'Kaczmarek', 'Polna 9', '555666777'),
-('Michał', 'Zieliński', 'Różana 4', '666777888'),
-('Roksana', 'Jandura', 'Brzozowa 6', '777888999'),
-('Monika', 'Kamińska', 'Akacjowa 2', '888999000'),
-('Krzysztof', 'Szymański', 'Długa 1', '999000111');
+(1,'Jan', 'Nowak', 'Kwiatowa 5', '111111111'),
+(2,'Julia', 'Kowalska', 'Lipowa 7', '111222333'),
+(3,'Jakub', 'Wiśniewski', 'Słoneczna 10', '222333444'),
+(4,'Anna', 'Nowicka', 'Jesienna 12', '333444555'),
+(5,'Joanna', 'Wójcik', 'Topolowa 3', '444555666'),
+(6,'Piotr', 'Kaczmarek', 'Polna 9', '555666777'),
+(7,'Michał', 'Zieliński', 'Różana 4', '666777888'),
+(8,'Roksana', 'Jandura', 'Brzozowa 6', '777888999'),
+(9,'Monika', 'Kamińska', 'Akacjowa 2', '888999000'),
+(10,'Krzysztof', 'Szymański', 'Długa 1', '999000111');
 
-INSERT INTO ksiegowosc.godziny (data, liczba_godzin, id_pracownika)
-VALUES
-('2023-10-01', 160, 1),
-('2023-10-01', 155, 2),
-('2023-10-01', 172, 3),
-('2023-10-01', 168, 4),
-('2023-10-01', 140, 5),
-('2023-10-01', 175, 6),
-('2023-10-01', 162, 7),
-('2023-10-01', 158, 8),
-('2023-10-01', 160, 9),
-('2023-10-01', 170, 10);
+INSERT INTO ksiegowosc.godziny (id_godziny, data, liczba_godzin, id_pracownika) VALUES
+(100, '2025-11-22', 104, 1),
+(101, '2025-11-22', 18, 2),
+(102, '2025-11-22', 170, 3),
+(103, '2025-11-22', 189, 4),
+(104, '2025-11-23', 92, 5),
+(105, '2025-11-23', 111, 6),
+(106, '2025-11-23', 192, 7),
+(107, '2025-11-24', 122, 8),
+(108, '2025-11-25', 16, 9),
+(109, '2025-11-25', 175, 10);
 
-INSERT INTO ksiegowosc.pensja (stanowisko, kwota)
+INSERT INTO ksiegowosc.pensja (id_pensji, stanowisko, kwota)
 VALUES
-('Kierownik', 9000.00),
-('Specjalista', 2500.00),
-('Asystent', 1800.00),
-('Magazynier', 1200.00),
-('Księgowy', 3000.00),
-('Kierownik', 7000.00),
-('Pracownik biurowy', 2800.00),
-('Specjalista', 950.00),
-('Praktykant', 800.00),
-('Analityk', 3200.00);
+(100000, 'Dyrektor', 20500),
+(200000, 'Menager', 8800),
+(300000, 'Menager', 2000),
+(400000, 'Menager', 800),
+(500000, 'Dyrektor marketingu', 1000),
+(600000, 'Kierownik', 7000),
+(700000, 'Dyrektor działu IT', 3000),
+(800000, 'Kierownik', 6800),
+(900000, 'Kierownik', 9400),
+(1000000, 'Dyrektor ds. obsługi klienta', 8700);
 
-INSERT INTO ksiegowosc.premia (rodzaj, kwota)
+INSERT INTO ksiegowosc.premia (id_premii, rodzaj, kwota)
 VALUES
-('Premia kwartalna', 1000.00),
-('Premia świąteczna', 800.00),
-('Premia uznaniowa', 1200.00),
-('Premia za nadgodziny', 600.00),
-('Premia lojalnościowa', 1500.00),
-('Premia roczna', 2000.00),
-('Premia projektowa', 1300.00),
-('Premia jubileuszowa', 900.00),
-('Premia za efektywność', 1100.00),
-('Brak premii', 0.00);
+(1000, 'Premia za nadgodziny', 4000),
+(1001, 'Premia za stanowisko', 700),
+(1002, 'Premia za stanowisko', 1000),
+(1003, 'Premia za stanowisko', 800),
+(1004, 'Premia za stanowisko', 900),
+(1005, 'Premia za stanowisko', 600),
+(1006, 'Premia za stanowisko', 800),
+(1007, 'Premia za stanowisko', 300),
+(1008, 'Premia za stanowisko', 3400),
+(1009, 'Premia za stanowisko', NULL);
 
-INSERT INTO ksiegowosc.wynagrodzenie (data, id_pracownika, id_godziny, id_pensji, id_premii)
+INSERT INTO ksiegowosc.wynagrodzenie (id_wynagrodzenia, data, id_pracownika, id_pensji, id_premii)
 VALUES
-('2023-10-31', 1, 1, 1, 1),
-('2023-10-31', 2, 2, 2, 2),
-('2023-10-31', 3, 3, 3, 3),
-('2023-10-31', 4, 4, 4, 10),
-('2023-10-31', 5, 5, 5, 5),
-('2023-10-31', 6, 6, 6, 4),
-('2023-10-31', 7, 7, 7, 10),
-('2023-10-31', 8, 8, 8, 8),
-('2023-10-31', 9, 9, 9, 10),
-('2023-10-31', 10, 10, 10, 6);
+(10000, '2025-12-01', 1, 100000, 1000),
+(10001, '2025-12-01', 2, 200000, 1001),
+(10002, '2025-12-01', 3, 300000, 1002),
+(10003, '2025-12-01', 4, 400000, 1003),
+(10004, '2025-12-01', 5, 500000, 1004),
+(10005, '2025-12-01', 6, 600000, 1005),
+(10006, '2025-12-01', 7, 700000, NULL),
+(10007, '2025-12-01', 8, 700000, 1006),
+(10008, '2025-12-01', 9, 800000, 1007),
+(10009, '2025-12-01', 10, 900000, 1008);

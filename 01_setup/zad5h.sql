@@ -1,6 +1,7 @@
 SELECT p.imie, p.nazwisko
 FROM ksiegowosc.pracownicy p
-JOIN ksiegowosc.wynagrodzenie w ON p.id_pracownika = w.id_pracownika
-JOIN ksiegowosc.godziny g ON w.id_godziny = g.id_godziny
-JOIN ksiegowosc.premia pr ON w.id_premii = pr.id_premii
-WHERE g.liczba_godzin > 160 AND pr.kwota = 0;
+JOIN ksiegowosc.godziny g ON p.id_pracownika = g.id_pracownika
+LEFT JOIN ksiegowosc.wynagrodzenie w ON p.id_pracownika = w.id_pracownika
+WHERE w.id_premii IS NULL
+GROUP BY p.id_pracownika, p.imie, p.nazwisko
+HAVING SUM(g.liczba_godzin) > 160;

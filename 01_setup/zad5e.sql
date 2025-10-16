@@ -1,3 +1,3 @@
-SELECT imie, nazwisko
+SELECT id_pracownika, imie, nazwisko
 FROM ksiegowosc.pracownicy
-WHERE nazwisko ILIKE '%n%' AND imie LIKE '%a';
+WHERE nazwisko LIKE '%n%' AND imie LIKE '%a';
